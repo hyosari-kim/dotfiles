@@ -1,0 +1,17 @@
+[user]
+	name = Sally Kim
+	email = sally@relate.so
+[rerere]
+	enabled = true
+[core]
+	editor = zed --wait
+[commit]
+	verbose = true
+[alias]
+	ch = checkout
+	pl = pull origin
+	ph = push origin
+	l = log --graph
+[log]
+	decorate = true
+	graph = true
