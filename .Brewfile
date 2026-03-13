@@ -49,8 +49,6 @@ brew "node"
 brew "nvm"
 # Create, run, and share large language models (LLMs)
 brew "ollama"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@1.1"
 # Terminal multiplexer
 brew "tmux"
 # Process manager for Procfile-based applications and tmux
