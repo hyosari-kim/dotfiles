@@ -97,6 +97,7 @@ cask "font-caskaydia-mono-nerd-font"
 cask "font-d2coding"
 cask "font-hack"
 cask "font-hack-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
 cask "font-ibm-plex"
 cask "font-source-code-pro"
 # Reverse proxy, secure introspectable tunnels to localhost
