@@ -1,6 +1,6 @@
 [user]
-	name = Sally Kim
-	email = sally@relate.so
+	name = hyoeun Kim
+	email = hyosari.kim@gmail.com
 [rerere]
 	enabled = true
 [core]
@@ -12,6 +12,7 @@
 	pl = pull origin
 	ph = push origin
 	l = log --graph
+	lg = log --graph --abbrev-commit --decorate --format=format:'%C(cyan)%h%C(reset) - %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(yellow)%d%C(reset)' --all
 [log]
 	decorate = true
 	graph = true
