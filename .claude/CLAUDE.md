@@ -1,3 +1,10 @@
+<!--
+  Source: "Karpathy CLAUDE.md" — behavioral guidelines derived from Andrej
+  Karpathy's observations on common LLM coding pitfalls. Widely-used community
+  template (four principles: Think / Simplify / Surgical / Goal-Driven).
+  Refs: https://github.com/multica-ai/andrej-karpathy-skills
+        https://github.com/josix/awesome-claude-md
+-->
 # CLAUDE.md
 
 Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific instructions as needed.
