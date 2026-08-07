@@ -69,6 +69,8 @@ brew "rbenv"
 brew "redis", restart_service: :changed
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# CLI proxy that minimizes LLM token consumption (used by Claude Code rtk hook)
+brew "rtk"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Generator for LS_COLORS with support for multiple color themes
