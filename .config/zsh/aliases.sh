@@ -34,8 +34,10 @@ mkcd() {
 # MODERN TOOL ENHANCEMENTS
 # ============================================================================
 
-command -v fd &>/dev/null && alias find='fd'
-command -v rg &>/dev/null && alias grep='rg --smart-case'
+# Note: keep system `find`/`grep` intact — fd/rg differ in defaults
+# (they respect .gitignore and skip hidden files). Use these instead:
+command -v fd &>/dev/null && alias f='fd'
+command -v rg &>/dev/null && alias rgs='rg --smart-case'
 
 if command -v bat &>/dev/null; then
   alias bathelp='bat --plain --language=help'

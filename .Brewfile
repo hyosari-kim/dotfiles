@@ -11,6 +11,8 @@ brew "bat"
 brew "cloudflared"
 # Reimplementation of ctags(1)
 brew "ctags"
+# Modern, maintained replacement for ls
+brew "eza"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # GitHub command-line tool
@@ -77,6 +79,12 @@ brew "tree"
 brew "vivid"
 # JavaScript package manager
 brew "yarn"
+# Fish-like fast/unobtrusive autosuggestions for zsh
+brew "zsh-autosuggestions"
+# Additional completion definitions for zsh
+brew "zsh-completions"
+# Fish shell like syntax highlighting for zsh
+brew "zsh-syntax-highlighting"
 # Everything you need to get started with Heroku
 brew "heroku/brew/heroku"
 # Nylas Command Line Utility

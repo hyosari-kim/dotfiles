@@ -44,7 +44,8 @@ PROMPT+=$'\n%F{blue}❯%f '
 # GHOSTTY INTEGRATION
 # ============================================================================
 
-export TERM="xterm-256color"
+# Let the terminal set TERM (Ghostty provides xterm-ghostty terminfo); only
+# forcing COLORTERM so truecolor is advertised regardless of terminal.
 export COLORTERM="truecolor"
 
 # Terminal title (Ghostty handles the rest automatically)
