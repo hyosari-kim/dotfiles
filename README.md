@@ -65,6 +65,7 @@ dotfiles push            # 푸시
 | `~/.claude/CLAUDE.md` | Claude Code 지침 |
 | `~/.claude/RTK.md` | RTK 참조 |
 | `~/.claude/settings.json` | Claude Code 설정 |
+| `~/.codex/config.toml.example` | Codex 기본 권한 템플릿 |
 | `~/.Brewfile` | Homebrew 패키지 목록 |
 | `~/.bootstrap.sh` | 초기 설치 스크립트 |
 
@@ -118,3 +119,32 @@ Codex 설정 전체나 세션 데이터는 이 통합 작업에서 추가 추적
 
 재사용 스킬·에이전트는 [skills](https://github.com/hyosari-kim/skills) 저장소에서
 관리하고 필요한 항목을 각 도구에 연결한다. 프로젝트별 설정은 별도로 유지한다.
+
+## AI 전역 권한 복원
+
+Claude Code는 추적 중인 `~/.claude/settings.json`에서 Opus 기본 모델을 유지하고,
+`permissions.defaultMode = "auto"`와 샌드박스를 사용한다. 샌드박스 안의 명령은
+자동 허용한다. Docker·Kamal 명령을 샌드박스에서 항상 제외하는 전역 규칙은
+두지 않으며, 필요한 외부 실행은 해당 작업에서 검토한다. 프로젝트 전용 운영
+정보와 플러그인 활성 상태 변경은 이 권한 기본값에 포함하지 않는다.
+
+Codex는 `~/.codex/config.toml.example`에 다음 기본값만 보관한다.
+
+```toml
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+approvals_reviewer = "auto_review"
+```
+
+새 Mac에서 bootstrap을 실행하면 설정 파일이 없는 경우에만 템플릿을
+`${CODEX_HOME:-$HOME/.codex}/config.toml`로 복사한다. 기존 설정 파일이나
+심볼릭 링크는 덮어쓰지 않는다. 기존 설치에서는 위 세 항목을 사용자 설정의
+최상위에 직접 추가하거나 수정하고 나머지 설정은 보존한다.
+
+자동 승인 검토는 전체 접근과 다르며, 일부 작업은 사용자 확인이 필요할 수
+있다. 새 채팅에서 권한 선택이 **자동 승인 검토(Approve for me)**인지 확인한다.
+실제 Codex 설정 전체·기기별 경로·인증정보·세션 데이터는 추적하지 않는다.
+
+참고: [Codex 샌드박스](https://learn.chatgpt.com/docs/sandboxing),
+[Claude 권한](https://code.claude.com/docs/en/permissions),
+[Claude 샌드박스](https://code.claude.com/docs/en/sandboxing).

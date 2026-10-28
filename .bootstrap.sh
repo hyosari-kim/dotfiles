@@ -49,4 +49,11 @@ if ! command -v claude &>/dev/null; then
   npm install -g @anthropic-ai/claude-code
 fi
 
+echo "=== Codex permission defaults ==="
+codex_config_dir="${CODEX_HOME:-$HOME/.codex}"
+if [ ! -e "$codex_config_dir/config.toml" ] && [ ! -L "$codex_config_dir/config.toml" ]; then
+  mkdir -p "$codex_config_dir"
+  cp "$HOME/.codex/config.toml.example" "$codex_config_dir/config.toml"
+fi
+
 echo "=== Done! Restart your terminal. ==="
