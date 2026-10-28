@@ -98,3 +98,23 @@ chmod +x ~/.bootstrap.sh && ~/.bootstrap.sh
 - `~/.zshrc.local` — 시크릿 (KAMAL_REGISTRY_PASSWORD 등)
 - `~/.config/gh/hosts.yml` — 인증 토큰
 - `~/.claude/` 내 세션 데이터 (history, todos, tasks 등)
+
+## AI 전역 지침과 스킬
+
+전역 행동 지침의 원본은 `~/.config/ai/AGENTS.md`, RTK 참조의 원본은
+`~/.config/ai/RTK.md`이다. 다음 상대 경로 심볼릭 링크를 함께 추적하므로
+dotfiles를 체크아웃하면 Codex와 Claude Code가 같은 문서를 참조한다.
+
+| 연결 경로 | 공통 원본 |
+|---|---|
+| `~/.codex/AGENTS.md` | `~/.config/ai/AGENTS.md` |
+| `~/.claude/CLAUDE.md` | `~/.config/ai/AGENTS.md` |
+| `~/.codex/RTK.md` | `~/.config/ai/RTK.md` |
+| `~/.claude/RTK.md` | `~/.config/ai/RTK.md` |
+
+지침 수정은 공통 원본에서 한 번만 한다. 모델·권한·플러그인 설정은
+제품별 설정 파일로 따로 관리한다. 기기별 경로·인증정보가 들어갈 수 있는
+Codex 설정 전체나 세션 데이터는 이 통합 작업에서 추가 추적하지 않는다.
+
+재사용 스킬·에이전트는 [skills](https://github.com/hyosari-kim/skills) 저장소에서
+관리하고 필요한 항목을 각 도구에 연결한다. 프로젝트별 설정은 별도로 유지한다.
