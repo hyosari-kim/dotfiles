@@ -1,5 +1,6 @@
 {
   "permissions": {
+    "defaultMode": "auto",
     "allow": [
       "Bash(*)",
       "Read",
@@ -16,6 +17,10 @@
       "Bash(mkfs *)",
       "Bash(dd if=*)"
     ]
+  },
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true
   },
   "model": "opus",
   "hooks": {
